@@ -7,10 +7,11 @@
   <title>WORK OUT</title>
 </head>
 <body>
-  <header class="headerContainer">
+
+  <header class="headerContainer show">
     <nav>
       <ul>
-        <li>menu1</li> 
+        <li>menu1</li>
         <li>menu2</li> 
         <li>menu3</li> 
       </ul>
@@ -18,10 +19,17 @@
   </header>
 
   <div class="container">
-    <div class="sideContainer">
-      
-    </div>
-    <div class="mainContainer">
+
+    <aside class="sideContainer">
+      <div class="header">
+
+      </div>
+      <div>
+
+      </div>
+    </aside>
+
+    <main class="mainContainer">
       <h1>WORK OUT</h1>
       <div class="viewContainer"></div>
       <div class="menuContainer">
@@ -31,8 +39,8 @@
             <li>menu3</li>
           </ul>
       </div>
+    <main>
 
-    </div>
   </div>
   
 </body>

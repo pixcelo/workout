@@ -5,20 +5,44 @@ html, body {
 }
 
 body {
-  background-color: #f7f0f0;
   font-size: 14px;
   min-width: 720px;
 }
 
+* {
+  letter-spacing: 1px;
+}
+
+
 .headerContainer {
-  background-color: #212121;
   height: 72px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: #212121;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.headerContainer ul {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  margin: 24px auto;
+}
+
+.headerContainer ul li {
+  margin-right: 2.25rem;
 }
 
 .headerContainer nav {
   color: #fff;
   list-style: none;
+}
+
+.container {
+  display: block;
+  width: 100%;
+  margin-top: 72px;
 }
 
 .sideContainer {
@@ -27,10 +51,26 @@ body {
   position: fixed;
   top: 0;
   left: 0;
+  border-color: rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  border-right-width: 1px;
+  border-right-style: solid;
 }
 
 .viewContainer {
   background-color: #e8e2e2;
   height: 300px;
   width: 300px;
+}
+
+.mainContainer h1 {
+  text-align: center;
+}
+
+.viewContainer {
+  margin: 0 auto;
+}
+
+.menuContainer ul {
+  list-style: none;
 }
