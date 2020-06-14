@@ -1,0 +1,36 @@
+html, body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  background-color: #f7f0f0;
+  font-size: 14px;
+  min-width: 720px;
+}
+
+.headerContainer {
+  background-color: #212121;
+  height: 72px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.headerContainer nav {
+  color: #fff;
+  list-style: none;
+}
+
+.sideContainer {
+  width: 220px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.viewContainer {
+  background-color: #e8e2e2;
+  height: 300px;
+  width: 300px;
+}
