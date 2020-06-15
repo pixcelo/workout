@@ -89,3 +89,8 @@ body {
 .menuContainer ul {
   list-style: none;
 }
+
+/* timer */
+.inactive {
+  opacity: 0.6;
+}

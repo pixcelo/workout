@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/script.js"></script>
   <title>WORK OUT</title>
 </head>
 <body>
@@ -31,7 +32,14 @@
 
     <main class="mainContainer">
       <h1>WORK OUT</h1>
-      <div class="viewContainer"></div>
+      <div class="viewContainer">
+          <div id="timer"></div>
+      </div>
+      <div class="controls">
+        <div class="btn" id="start">start</div>
+        <div class="btn" id="stop">stop</div>
+        <div class="btn" id="reset">Reset</div>
+      </div>
       <div class="menuContainer">
           <h3>【トレーニングメニュー】</h2>
           <ul>
