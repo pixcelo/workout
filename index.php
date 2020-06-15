@@ -34,9 +34,9 @@
       <div class="viewContainer"></div>
       <div class="menuContainer">
           <ul>
-            <li>menu1</li>
-            <li>menu2</li>
-            <li>menu3</li>
+            <li>プッシュアップ</li>
+            <li>バイシクル</li>
+            <li>スクワット</li>
           </ul>
       </div>
     <main>

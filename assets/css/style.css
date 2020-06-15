@@ -60,7 +60,11 @@ body {
 .viewContainer {
   background-color: #e8e2e2;
   height: 300px;
-  width: 300px;
+  width: 500px;
+}
+
+.mainContainer {
+  margin-top: 150px;
 }
 
 .mainContainer h1 {
@@ -68,6 +72,11 @@ body {
 }
 
 .viewContainer {
+  margin: 0 auto;
+}
+
+.menuContainer {
+  width: 500px;
   margin: 0 auto;
 }
 
