@@ -58,7 +58,7 @@ body {
 }
 
 .viewContainer {
-  background-color: #e8e2e2;
+  background-color: #fdf9f9;;
   height: 300px;
   width: 500px;
 }
@@ -69,6 +69,7 @@ body {
 
 .mainContainer h1 {
   text-align: center;
+  font-weight: 500;
 }
 
 .viewContainer {
@@ -78,6 +79,11 @@ body {
 .menuContainer {
   width: 500px;
   margin: 0 auto;
+}
+
+.menuContainer h3 {
+  text-align: center;
+  font-weight: 300;
 }
 
 .menuContainer ul {

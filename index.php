@@ -33,10 +33,11 @@
       <h1>WORK OUT</h1>
       <div class="viewContainer"></div>
       <div class="menuContainer">
+          <h3>【トレーニングメニュー】</h2>
           <ul>
-            <li>プッシュアップ</li>
-            <li>バイシクル</li>
-            <li>スクワット</li>
+            <li class="menu">プッシュアップ</li>
+            <li class="menu">バイシクル</li>
+            <li class="menu">スクワット</li>
           </ul>
       </div>
     <main>
