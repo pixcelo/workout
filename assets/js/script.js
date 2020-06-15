@@ -23,5 +23,5 @@ const timerId = setInterval(() => {
     }
 
     // 画面に表示する
-    document.getElementById('timer').innerHTML = label;
+    document.getElementById('count').innerHTML = label;
 }, 1000);

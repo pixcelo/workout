@@ -33,7 +33,8 @@
     <main class="mainContainer">
       <h1>WORK OUT</h1>
       <div class="viewContainer">
-          <div class="circle" id="timer"></div>
+          <div class="circle" id="count"></div>
+          <div class="circle none" id="timer">00:00</div>
       </div>
       <div class="controls">
         <div class="btn" id="start">start</div>

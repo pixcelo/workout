@@ -106,3 +106,8 @@ body {
   right: 20px;
   top: 20px;
 }
+
+.none {
+  display: none;
+  font-size: 20px;
+}
