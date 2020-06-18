@@ -1,100 +1,59 @@
 'use strict';
 
-// カウントダウンタイマー
-const totalTime = 4000;
-const oldTime = Date.now();
-
-const timerId = setInterval(() => {
-    const currentTime = Date.now();
-    const diff = currentTime - oldTime;
-
-    // 残り時間（ミリ秒）
-    const remainMSec = totalTime - diff;
-
-    // ミリ秒を秒に変換
-    const remainSec = Math.ceil(remainMSec / 1000);
-
-    let label = `${remainSec}`;
-
-    // 0秒以下になったらタイマー終了
-    if (remainSec <= 0) {
-      clearInterval(timerId);
-      label = 'START';
-      // console.log("start");
-    }
-
-    // 画面に表示する
-    document.getElementById('count').innerHTML = label;
-}, 1000);
-
-// トレーニングタイマー
 const timer = document.getElementById('timer');
 const start = document.getElementById('start');
 const stop = document.getElementById('stop');
 const reset = document.getElementById('reset');
+const count = document.getElementById('count');
 
-let startTime;
-let timeoutId;
-let elapsedTime = 0;
+// カウントダウンタイマー（3秒）
+let totalTime = 4;
+function countDown() {
+    console.log(totalTime--);
+    let label = `${totalTime}`;
+    let timerId = setTimeout(countDown, 1000);
 
-// カウントアップの定義
-function countUp() {
-  // 秒の単位表示を修正
-  const d = new Date(Date.now() - startTime + elapsedTime);
-  const m = String(d.getMinutes()).padStart(2, '0');
-  const s = String(d.getSeconds()).padStart(2, '0');
-  timer.textContent = `${m}:${s}`;
+    if(totalTime == 0){
+      label = 'START';
+    }
 
-  // countUp() の処理を一定時間ごとに繰り返す
-  timeoutId = setTimeout(() => {
-    countUp();
-  }, 10);
+    if(totalTime == -1) {
+      count.classList.add('none');
+      clearTimeout(timerId);
+      totalTime = 4;
+      return;
+    }
+
+    count.classList.remove('none');  // 画面に表示する
+    count.innerHTML = label;
 }
 
-// それぞれの状態を関数で整理
-function setButtonStateInitial() {
-    start.classList.remove('inactive');
-    stop.classList.add('inactive');
-    reset.classList.add('inactive');
+// ワークアウトタイマー（30秒）
+let workoutTime = 31;
+function runTimer() {
+    console.log(workoutTime--);
+    let label2 = `${workoutTime}`;
+    let timeoutId = setTimeout(runTimer, 1000);
+
+    if(workoutTime == 0){
+      label2 = 'FINISH';
+    }
+
+    if(workoutTime == -1) {
+      timer.classList.add('none');
+      clearTimeout(timeoutId);
+      workoutTime = 4;
+      return;
+    }
+
+    timer.classList.remove('none');  // 画面に表示する
+    timer.innerHTML = label2;
 }
 
-function setButtonStateRunning() {
-    start.classList.add('inactive');
-    stop.classList.remove('inactive');
-    reset.classList.remove('inactive');
-}
 
-function setButtonStateStopped() {
-    start.classList.remove('inactive');
-    stop.classList.add('inactive');
-    reset.classList.remove('inactive');
-}
 
-setButtonStateInitial();
 
 start.addEventListener('click', () => {
-    if (start.classList.contains('inactive') === true) {
-      return;
-    }
-    setButtonStateRunning();
-    startTime = Date.now();
-    countUp();
-});
-
-stop.addEventListener('click', () => {
-    if (stop.classList.contains('inactive') === true) {
-      return;
-    }
-    setButtonStateStopped();
-    clearTimeout(timeoutId);
-    elapsedTime += Date.now() - startTime;
-});
-
-reset.addEventListener('click', () => {
-  if (reset.classList.contains('inactive') === true) {
-    return;
-  }
-  setButtonStateInitial();
-  timer.textContent = '00:00.000';
-  elapsedTime = 0;
+    countDown();
+    runTimer();
 });

@@ -33,8 +33,8 @@
     <main class="mainContainer">
       <h1>WORK OUT</h1>
       <div class="viewContainer">
-          <div class="circle" id="count"></div>
-          <div class="circle none" id="timer">00:00</div>
+          <div class="circle none" id="count"></div>
+          <div class="timezone" id="timer">30</div>
       </div>
       <div class="timeContainer">
         <div class="controls">
@@ -54,7 +54,7 @@
     <main>
 
   </div>
-  
+
   <script src="assets/js/script.js"></script>
 </body>
 </html>
