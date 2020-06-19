@@ -7,20 +7,21 @@ const reset = document.getElementById('reset');
 const count = document.getElementById('count');
 
 // カウントダウンタイマー（3秒）
-let totalTime = 4;
+let totalTime = 3;
 function countDown() {
-    console.log(totalTime--);
     let label = `${totalTime}`;
+    console.log(totalTime--);
     let timerId = setTimeout(countDown, 1000);
 
-    if(totalTime == 0){
+    if(totalTime == -1){
       label = 'START';
     }
 
-    if(totalTime == -1) {
+    if(totalTime == -2) {
       count.classList.add('none');
       clearTimeout(timerId);
-      totalTime = 4;
+      totalTime = 3;
+      runTimer();
       return;
     }
 
@@ -28,18 +29,19 @@ function countDown() {
     count.innerHTML = label;
 }
 
+
 // ワークアウトタイマー（30秒）
-let workoutTime = 31;
+let workoutTime = 3;
 function runTimer() {
-    console.log(workoutTime--);
     let label2 = `${workoutTime}`;
+    console.log(workoutTime--);
     let timeoutId = setTimeout(runTimer, 1000);
 
-    if(workoutTime == 0){
+    if(workoutTime == -1){
       label2 = 'FINISH';
     }
 
-    if(workoutTime == -1) {
+    if(workoutTime == -2) {
       timer.classList.add('none');
       clearTimeout(timeoutId);
       workoutTime = 4;
@@ -52,8 +54,6 @@ function runTimer() {
 
 
 
-
 start.addEventListener('click', () => {
     countDown();
-    runTimer();
 });
