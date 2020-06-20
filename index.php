@@ -41,8 +41,6 @@
       <div class="timeContainer">
         <div class="controls">
           <div class="btn" id="start">start</div>
-          <div class="btn" id="stop">stop</div>
-          <div class="btn" id="reset">Reset</div>
         </div>
       </div>
       <div class="menuContainer">
