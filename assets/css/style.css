@@ -154,3 +154,20 @@ body {
 .inactive {
   opacity: 0.6;
 }
+
+/* push up */
+.pushup {
+  background: url(../images/person/pushUpMan.svg) no-repeat;
+  width: 360px;
+  height: 173px;
+  animation: play 1s steps(2) infinite;
+  position: absolute;
+  top: 38%;
+  left: 17%;
+}
+
+@keyframes play {
+  to {
+    background-position: -840px 0;
+  }
+}

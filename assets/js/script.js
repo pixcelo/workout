@@ -5,16 +5,17 @@ const start = document.getElementById('start');
 const stop = document.getElementById('stop');
 const reset = document.getElementById('reset');
 const count = document.getElementById('count');
+const pushup = document.querySelector('.pushup');
 
 // カウントダウンタイマー（3秒）
 let totalTime = 3;
 function countDown() {
-    let label = `${totalTime}`;
+    let timerLabel = `${totalTime}`;
     console.log(totalTime--);
     let timerId = setTimeout(countDown, 1000);
 
     if(totalTime == -1){
-      label = 'START';
+      timerLabel = 'START';
     }
 
     if(totalTime == -2) {
@@ -26,19 +27,18 @@ function countDown() {
     }
 
     count.classList.remove('none');  // 画面に表示する
-    count.innerHTML = label;
+    count.innerHTML = timerLabel;
 }
 
-
 // ワークアウトタイマー（30秒）
-let workoutTime = 3;
+let workoutTime = 30;
 function runTimer() {
-    let label2 = `${workoutTime}`;
+    let countLabel = `${workoutTime}`;
     console.log(workoutTime--);
     let timeoutId = setTimeout(runTimer, 1000);
 
     if(workoutTime == -1){
-      label2 = 'FINISH';
+      countLabel = 'FINISH';
     }
 
     if(workoutTime == -2) {
@@ -49,9 +49,9 @@ function runTimer() {
     }
 
     timer.classList.remove('none');  // 画面に表示する
-    timer.innerHTML = label2;
+    pushup.classList.remove('none');
+    timer.innerHTML = countLabel;
 }
-
 
 
 start.addEventListener('click', () => {

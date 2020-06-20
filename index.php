@@ -35,6 +35,7 @@
       <div class="viewContainer">
           <div class="circle none" id="count"></div>
           <div class="timezone none" id="timer">30</div>
+          <div class="pushup none"></div>
       </div>
       <div class="timeContainer">
         <div class="controls">
