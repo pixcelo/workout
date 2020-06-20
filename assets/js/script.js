@@ -38,22 +38,66 @@ function runTimer() {
     let timeoutId = setTimeout(runTimer, 1000);
 
     if(workoutTime == -1){
-      countLabel = 'FINISH';
+        countLabel = 'FINISH';
     }
 
     if(workoutTime == -2) {
-      timer.classList.add('none');
-      clearTimeout(timeoutId);
-      workoutTime = 4;
-      return;
+        clearTimeout(timeoutId);
+        stopTimer();
+        return;
     }
-
+    
     timer.classList.remove('none');  // 画面に表示する
     pushup.classList.remove('none');
     timer.innerHTML = countLabel;
 }
 
+function stopTimer() {
+    timer.classList.add('none');
+    pushup.classList.add('none');
+    workoutTime = 4;
+}
+
+// それぞれの状態を関数で整理
+function setButtonStateInitial() {
+  start.classList.remove('inactive');
+  stop.classList.add('inactive');
+  reset.classList.add('inactive');
+}
+
+function setButtonStateRunning() {
+  start.classList.add('inactive');
+  stop.classList.remove('inactive');
+  reset.classList.remove('inactive');
+}
+
+function setButtonStateStopped() {
+  start.classList.remove('inactive');
+  stop.classList.add('inactive');
+  reset.classList.remove('inactive');
+}
+
+setButtonStateInitial();
 
 start.addEventListener('click', () => {
+    if (start.classList.contains('inactive')) {
+      return;
+    }
+    setButtonStateRunning();
     countDown();
+});
+
+stop.addEventListener('click', () => {
+  if (stop.classList.contains('inactive')) {
+    return;
+  }
+  setButtonStateStopped();
+  clearTimeout(timeoutId);
+});
+
+reset.addEventListener('click', () => {
+  if (reset.classList.contains('inactive')) {
+    return;
+  }
+  setButtonStateInitial();
 });
