@@ -30,6 +30,7 @@ if(isset($_POST['registerButton'])) {
 
     $wasSuccessful = $account->register($username, $firstName, $lastName, $email, $email2, $password, $password2);
 
+    // trueならSESSIONに代入してindex.phpのUser情報の取得に使用
     if($wasSuccessful) {
       $_SESSION['userLoggedIn'] = $username;
       header("Location: index.php");

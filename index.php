@@ -1,6 +1,11 @@
 <?php
   include("includes/config.php"); // DB Connect
   include("includes/classes/Account.php"); // DB Insert
+  include("includes/classes/User.php"); // Get User Info
+
+  if(isset($_SESSION['userLoggedIn'])) {
+      $userLoggedIn = new User($con, $_SESSION['userLoggedIn']);
+  }
 
 ?>
 
@@ -23,7 +28,7 @@
 
     <nav>
       <ul>
-        <li><a href=""><?php echo 'User'; ?></a><</li>
+        <li><a href=""><?php echo $userLoggedIn->getUsername(); ?></a><</li>
         <li><a href="">Log in</a></li>
         <li><a href="register.php">Sign up</a></li> 
         <li><a href="">contact</a></li> 
