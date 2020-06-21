@@ -1,8 +1,20 @@
 <?php
-  include("includes/config.php");
+  include("includes/config.php"); // DB Connect
+  include("includes/classes/Account.php"); // DB Insert
+  include("includes/classes/Constants.php"); // Validate Message
 
-  include("includes/handlers/register-handler.php");
+  $account = new Account($con);
 
+  include("includes/handlers/register-handler.php"); // Sanitize
+
+  // inputのvalueにPOSTで渡った値を表示
+  function getInputValue($name) {
+    if(isset($_POST[$name])) {
+      echo $_POST[$name];
+    }
+  }
+
+  var_dump($_POST['username']);
 ?>
 
 
@@ -17,7 +29,7 @@
 </head>
 <body>
 
-  <header class="headerContainer show">
+  <header class="headerContainer">
     <nav>
       <ul>
         <li><a href="">Log in</a></li>
@@ -29,15 +41,6 @@
 
   <div class="container">
 
-    <aside class="sideContainer">
-      <div class="header">
-
-      </div>
-      <div>
-
-      </div>
-    </aside>
-
     <main class="registerContainer">
       <div class="inputContainer">
           <form id="registerForm" action="register.php" method="POST">
@@ -45,39 +48,40 @@
             <p>
 
             <label for="username">user name</label>
-              <input id="username" name="username" type="text" placeholder="e.g. Johnny" value="" required>
+              <input id="username" name="username" type="text" placeholder="e.g. Johnny" value="<?php getInputValue('username') ?>" required>
             </p>
             <p>
 
             <label for="firstName">first name</label>
-              <input id="firstName" name="firstName" type="text" placeholder="e.g. John" value="" required>
+              <input id="firstName" name="firstName" type="text" placeholder="e.g. John" value="<?php getInputValue('firstName') ?>" required>
             </p>
+
             <p>
             <label for="lastName">last name</label>
-              <input id="lastName" name="lastName" type="text" placeholder="e.g. Smith" value="" required>
+              <input id="lastName" name="lastName" type="text" placeholder="e.g. Smith" value="<?php getInputValue('lastName') ?>" required>
             </p>
-            <p>
 
+            <p>
             <label for="email">email</label>
-              <input id="email" name="email" type="email" placeholder="e.g. test@gmai.com" value="" required>
+              <input id="email" name="email" type="email" placeholder="e.g. test@gmai.com" value="<?php getInputValue('email') ?>" required>
             </p>
+
             <p>
             <label for="email2">email confirm</label>
-              <input id="email2" name="email2" type="email" placeholder="e.g. test@gmai.com" value="" required>
+              <input id="email2" name="email2" type="email" placeholder="e.g. test@gmai.com" value="<?php getInputValue('email2') ?>" required>
             </p>
-            <p>
 
+            <p>
               <label for="password">password</label>
-              <input id="password" name="password" type="password" placeholder="your password" required>
+              <input id="password" name="password" type="password" placeholder="your password" required autocomplete="off">
             </p>
+
             <p>
               <label for="password2">password confirm</label>
-              <input id="password2" name="password2" type="password" placeholder="your password" required>
+              <input id="password2" name="password2" type="password" placeholder="your password" required autocomplete="off">
             </p>
 
             <button type="submit" name="registerButton">register</button>
-
-
           </form>
       </div>
 

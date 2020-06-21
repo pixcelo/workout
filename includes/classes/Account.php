@@ -10,7 +10,7 @@
     }
 
     public function register($un, $fn, $ln, $em, $em2, $pw, $pw2) {
-        $this->validateUsername($un);
+        $this->validateUserName($un);
         $this->validateFirstName($fn);
         $this->validateLastName($ln);
         $this->validateEmails($em, $em2);
@@ -43,18 +43,19 @@
     //     }
     // }
 
-    // アカウント登録：データベースへの挿入
+    // アカウント登録：DB挿入
     private function insertUserDetails($un, $fn, $ln, $em, $pw) {
-        $encryptedPw = sha1($pw);
+        $encryptedPw = md5($pw);
         $date = date("Y-m-d");
         $result = mysqli_query($this->con, "INSERT INTO users VALUES (NULL, '$un', '$fn', '$ln', '$em', '$encryptedPw', '$date')");
 
         return $result;
     }
 
+    
     // 入力項目のバリデーション
-    private function validateUsername($un) {
-        if(mb_strlen($un) > 25 || mb_strlen($un) < 5) {
+    private function validateUserName($un) {
+        if(strlen($un) > 25 || strlen($un) < 5) {
             array_push($this->errorArray, Constants::$userNameCharacters);
             return;
         }
@@ -67,18 +68,17 @@
     }
     
     private function validateFirstName($fn) {
-        if(mb_strlen($fn) > 25 || mb_strlen($fn) < 2) {
+        if(strlen($fn) > 25 || strlen($fn) < 2) {
           array_push($this->errorArray, Constants::$firstNameCharacters);
           return;
         }
     }
     
     private function validateLastName($ln) {
-        if (mb_strlen($ln) > 25 || mb_strlen($ln) < 2) {
+        if (strlen($ln) > 25 || strlen($ln) < 2) {
           array_push($this->errorArray, Constants::$lastNameCharacters);
           return;
         }
-    
     }
 
     private function validateEmails($em, $em2) {
@@ -94,8 +94,8 @@
 
         $checkEmailQuery = mysqli_query($this->con, "SELECT email FROM users WHERE email='$em'");
         if(mysqli_num_rows($checkEmailQuery) != 0) {
-          array_push($this->errorArray, Constants::$emailTaken);
-          return;
+            array_push($this->errorArray, Constants::$emailTaken);
+            return;
         }
     }
     
