@@ -5,17 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Noto+Sans+JP:400,700" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
-  
-  <title>WORK OUT</title>
+  <title>workout</title>
 </head>
 <body>
 
   <header class="headerContainer show">
+
+    <div>
+        <img src="" class="" alt="">
+    </div>
+
     <nav>
       <ul>
-        <li>menu1</li>
-        <li>menu2</li> 
-        <li>menu3</li> 
+        <li><a href="">Log in</a></li>
+        <li><a href="register.php">Sign up</a></li> 
+        <li><a href="">contact</a></li> 
       </ul>
     </nav>
   </header>
@@ -32,7 +36,7 @@
     </aside>
 
     <main class="mainContainer">
-      <h1>WORK OUT</h1>
+      <h1>Work out</h1>
       <div class="viewContainer">
           <div class="circle none" id="count"></div>
           <div class="timezone none" id="timer">30</div>

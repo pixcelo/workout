@@ -36,8 +36,12 @@ body {
 }
 
 .headerContainer nav {
-  color: #fff;
   list-style: none;
+}
+
+.headerContainer nav ul li a {
+  color: #fff;
+  text-decoration: none;
 }
 
 .container {

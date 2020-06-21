@@ -1,0 +1,84 @@
+html, body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  font-size: 14px;
+  min-width: 720px;
+  font-family: 'Lato', 'Noto Sans JP', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+}
+
+* {
+  letter-spacing: 1px;
+}
+
+.headerContainer {
+  height: 72px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: #212121;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.headerContainer ul {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  margin: 24px auto;
+}
+
+.headerContainer ul li {
+  margin-right: 2.25rem;
+}
+
+.headerContainer nav {
+  list-style: none;
+}
+
+.headerContainer nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.container {
+  display: block;
+  width: 100%;
+  margin-top: 72px;
+}
+
+/* register form */
+.registerContainer {
+  margin: 0 auto;
+  position: relative;
+  max-width: 1024px;
+}
+
+.inputContainer {
+  width: 400px;
+  padding: 45px;
+  margin: 0 auto;
+}
+
+.inputContainer h2 {
+  text-align: center;
+}
+
+.inputContainer input[type="text"],
+.inputContainer input[type="email"],
+.inputContainer input[type="password"] {
+    display: block;
+    border: 1px solid #b5b2b2;;
+    height: 27px;
+    line-height: 27px;
+    width: 100%;
+}
+
+.inputContainer label {
+  color: #a0a0a0;
+  padding-bottom: 5px;
+  font-size: 13px;
+  display: block;
+}
