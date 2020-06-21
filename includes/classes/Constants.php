@@ -1,6 +1,6 @@
 <?php
 Class Constants {
-    
+
     // register form
 	public static $passwordsDoNoMatch = "Your passwords don't match";
 	public static $passwordNotAlphanumeric = "Your password can only contain numbers and letters";
@@ -15,5 +15,5 @@ Class Constants {
 
     // login form
 	public static $loginFailed = "Your username or password was incorrect";
+
 }
-?>
