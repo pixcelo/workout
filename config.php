@@ -7,7 +7,7 @@
   $timezone = date_default_timezone_set('Asia/Tokyo');
 
   // 引数は（ホスト名, ユーザー名, パスワード, データベース名）
-  $con = mysqli_connect('localhost', 'root', 'root', 'slotify');
+  $con = mysqli_connect('localhost', 'root', 'root', 'workout');
 
   if(mysqli_connect_error()) {
     echo "Failed to connect: ". mysqli_connect_error();

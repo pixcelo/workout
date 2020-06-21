@@ -1,3 +1,11 @@
+<?php
+  include("includes/config.php");
+
+  include("includes/handlers/register-handler.php");
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -77,6 +85,5 @@
 
   </div>
 
-  <script src="assets/js/script.js"></script>
 </body>
 </html>
