@@ -26,7 +26,7 @@
   <title>workout</title>
 </head>
 <body>
-<!-- 
+
   <header class="headerContainer">
     <nav>
       <ul>
@@ -35,7 +35,7 @@
         <li><a href="">contact</a></li> 
       </ul>
     </nav>
-  </header> -->
+  </header>
 
   <div class="container">
 

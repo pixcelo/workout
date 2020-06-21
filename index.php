@@ -1,3 +1,9 @@
+<?php
+  include("includes/config.php"); // DB Connect
+  include("includes/classes/Account.php"); // DB Insert
+
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -17,6 +23,7 @@
 
     <nav>
       <ul>
+        <li><a href=""><?php echo 'User'; ?></a><</li>
         <li><a href="">Log in</a></li>
         <li><a href="register.php">Sign up</a></li> 
         <li><a href="">contact</a></li> 
