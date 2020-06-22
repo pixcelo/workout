@@ -6,7 +6,11 @@
   if(isset($_SESSION['userLoggedIn'])) {
       $userLoggedIn = new User($con, $_SESSION['userLoggedIn']);
   }
-
+ 
+  $word1 = htmlspecialchars($_POST['workoutName'], ENT_QUOTES, 'UTF-8');
+  // $word2 = htmlspecialchars($_POST['playDate'], ENT_QUOTES, 'UTF-8');
+  
+  echo "{$word1}と{$word2}を入力しました。";
 
 ?>
 
@@ -63,6 +67,7 @@
       <div class="timeContainer">
         <div class="controls">
           <div class="btn" id="start">start</div>
+          <div id="result"></div>
           <input id="play" type="hidden">
         </div>
       </div>
@@ -80,9 +85,28 @@
 
   <script src="assets/js/script.js"></script>
   <script>
+   
     start.addEventListener('click', () => {
-  
-    });
+ 
+    // let data = new FormData(document.getElementById('form'));
+    let now = new Date();
+    console.log(now);
+    const data = { workoutName: 'pushup', playDate: now, playCount: 1 };
+
+    fetch('index.php', {
+        method: 'POST',
+        body: data,
+        })
+        .then(function (response) {
+            return response.text();
+        })
+        .then(function (data) {
+            document.getElementById('result').textContent = data;
+        })
+        .catch(function (error) {
+            document.getElementById('result').textContent = error;
+        })
+    }, false);
 
   </script>
 </body>
