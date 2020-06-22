@@ -2,16 +2,14 @@
   include("includes/config.php"); // DB Connect
   include("includes/classes/Account.php"); // DB Insert
   include("includes/classes/User.php"); // Get User Info
+  include("includes/handlers/ajax/workouts.php"); // Get User Info
 
   if(isset($_SESSION['userLoggedIn'])) {
       $userLoggedIn = new User($con, $_SESSION['userLoggedIn']);
   }
- 
-  $word1 = htmlspecialchars($_POST['workoutName'], ENT_QUOTES, 'UTF-8');
-  // $word2 = htmlspecialchars($_POST['playDate'], ENT_QUOTES, 'UTF-8');
-  
-  echo "{$word1}と{$word2}を入力しました。";
 
+ var_dump($_POST);
+ 
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +23,7 @@
 </head>
 <body>
 
-  <header class="headerContainer show">
+  <!-- <header class="headerContainer show">
 
     <div>
         <img src="" class="" alt="">
@@ -39,7 +37,7 @@
         <li><a href="">contact</a></li> 
       </ul>
     </nav>
-  </header>
+  </header> -->
 
   <div class="container">
 
@@ -66,9 +64,11 @@
       </div>
       <div class="timeContainer">
         <div class="controls">
-          <div class="btn" id="start">start</div>
+          <form id="myForm">
+              <input type="hidden" name="hogehoge">
+              <button class="btn" id="start" type="submit">start</button>
+          </form>
           <div id="result"></div>
-          <input id="play" type="hidden">
         </div>
       </div>
       <div class="menuContainer">
@@ -86,27 +86,25 @@
   <script src="assets/js/script.js"></script>
   <script>
    
-    start.addEventListener('click', () => {
- 
-    // let data = new FormData(document.getElementById('form'));
-    let now = new Date();
-    console.log(now);
-    const data = { workoutName: 'pushup', playDate: now, playCount: 1 };
+  const myForm = document.getElementById('myForm')
+  
+  myForm.addEventListener('submit', function (e) {
+      e.preventDefault();
 
-    fetch('index.php', {
-        method: 'POST',
-        body: data,
-        })
-        .then(function (response) {
-            return response.text();
-        })
-        .then(function (data) {
-            document.getElementById('result').textContent = data;
-        })
-        .catch(function (error) {
-            document.getElementById('result').textContent = error;
-        })
-    }, false);
+      const formData = new FormData(this);
+
+      fetch('index.php', {
+          method: 'POST',
+          body: formData
+      }).then(function (response) {
+          return response.text();
+      }).then(function (text) {
+          console.log(text);
+      }).catch( function (error) {
+          console.log(error);
+      })
+  });
+  
 
   </script>
 </body>
