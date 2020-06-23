@@ -8,8 +8,6 @@
       $userLoggedIn = new User($con, $_SESSION['userLoggedIn']);
   }
 
- var_dump($_POST);
- 
 ?>
 
 <!DOCTYPE html>
@@ -65,7 +63,8 @@
       <div class="timeContainer">
         <div class="controls">
           <form id="myForm">
-              <input type="hidden" name="hogehoge">
+              <input type="hidden" name="workoutName" value="pushup">
+              <input type="hidden" name="workoutName" value="pushup">
               <button class="btn" id="start" type="submit">start</button>
           </form>
           <div id="result"></div>
@@ -90,10 +89,10 @@
   
   myForm.addEventListener('submit', function (e) {
       e.preventDefault();
+      const data = new URLSearchParams();
 
-      const formData = new FormData(this);
 
-      fetch('index.php', {
+      fetch('test.php', {
           method: 'POST',
           body: formData
       }).then(function (response) {
@@ -105,7 +104,7 @@
       })
   });
   
-
   </script>
+  
 </body>
 </html>
