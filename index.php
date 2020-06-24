@@ -64,11 +64,7 @@
       </div>
       <div class="timeContainer">
         <div class="controls">
-          <form id="form">
-              <input type="hidden" name="workoutName" value="pushup">
-              <input type="hidden" name="playCount" value="1">
               <button class="btn" id="start" type="submit">start</button>
-          </form>
           <div id="result"></div>
         </div>
       </div>
@@ -85,24 +81,24 @@
   </div>
 
   <script src="assets/js/script.js"></script>
-  
   <script>
+    start.addEventListener('click', () => {
+     
+});
 
-  const obj = {hello: 'world'};
-
-  const data = {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(obj)
-  };
-
-  fetch('test.php', data)
-    .then((res) => res.text())
-    .then(console.log);
+    const postData = new FormData;
+    postData.set('workoutName', 'pushup');
+    postData.set('playCount', 1);
+  
+    const data = {
+      method: 'POST',
+      body: postData
+    };
+  
+    fetch('test.php', data)
+      .then((res) => res.text())
+      .then(console.log);
 
   </script>
-
 </body>
 </html>

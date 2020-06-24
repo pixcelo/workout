@@ -1,8 +1,19 @@
 <?php
+include('includes/config.php');
 
-$json_string = file_get_contents('php://input');
+$workoutName =  $_POST['workoutName'];
+$playCount = $_POST['playCount'];
+$playDate = date("Y-m-d");
 
-$obj = json_decode($json_string);
+$checkQuery = mysqli_query($con, "SELECT * FROM workouts WHERE workoutName='$workoutName'");
 
-$workoutName = $obj->{'hello'};
+if (mysqli_num_rows($checkQuery > 1)) {
+  echo "ok";
+}
 
+// if() {
+//   $query = "INSERT INTO workouts VALUES (NULL, '$workoutName', '$playDate', '$playCount')";
+// }else {
+//     $query = "INSERT INTO workouts VALUES (NULL, '$workoutName', '$playDate', '$playCount')";
+// }
+//   mysqli_query($con, $query);
