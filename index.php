@@ -83,10 +83,7 @@
   <script src="assets/js/script.js"></script>
   <script>
     start.addEventListener('click', () => {
-     
-});
-
-    const postData = new FormData;
+      const postData = new FormData;
     postData.set('workoutName', 'pushup');
     postData.set('playCount', 1);
   
@@ -95,9 +92,12 @@
       body: postData
     };
   
-    fetch('test.php', data)
+    fetch('workout.php', data)
       .then((res) => res.text())
       .then(console.log);
+});
+
+  
 
   </script>
 </body>
