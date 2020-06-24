@@ -4,6 +4,8 @@
   include("includes/classes/User.php"); // Get User Info
   include("includes/handlers/ajax/workouts.php"); // Get User Info
 
+  include("test.php"); 
+
   if(isset($_SESSION['userLoggedIn'])) {
       $userLoggedIn = new User($con, $_SESSION['userLoggedIn']);
   }
@@ -62,9 +64,9 @@
       </div>
       <div class="timeContainer">
         <div class="controls">
-          <form id="myForm">
+          <form id="form">
               <input type="hidden" name="workoutName" value="pushup">
-              <input type="hidden" name="workoutName" value="pushup">
+              <input type="hidden" name="playCount" value="1">
               <button class="btn" id="start" type="submit">start</button>
           </form>
           <div id="result"></div>
@@ -83,28 +85,24 @@
   </div>
 
   <script src="assets/js/script.js"></script>
+  
   <script>
-   
-  const myForm = document.getElementById('myForm')
-  
-  myForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      const data = new URLSearchParams();
 
+  const obj = {hello: 'world'};
 
-      fetch('test.php', {
-          method: 'POST',
-          body: formData
-      }).then(function (response) {
-          return response.text();
-      }).then(function (text) {
-          console.log(text);
-      }).catch( function (error) {
-          console.log(error);
-      })
-  });
-  
+  const data = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(obj)
+  };
+
+  fetch('test.php', data)
+    .then((res) => res.text())
+    .then(console.log);
+
   </script>
-  
+
 </body>
 </html>

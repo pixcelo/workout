@@ -1,13 +1,8 @@
 <?php
-include("DB.php");
 
-// var_dump($_POST);
+$json_string = file_get_contents('php://input');
 
-// echo '<p>' . $_POST . '</p>';
+$obj = json_decode($json_string);
 
+$workoutName = $obj->{'hello'};
 
-// foreach ($_POST as $value) {
-//   echo $value;
-// }
-
-// $name = $_POST['name'];
