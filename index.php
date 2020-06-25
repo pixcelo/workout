@@ -30,7 +30,7 @@
     <nav>
       <ul>
         <li><a href=""></a></li>
-        <li><a href="">Log in</a></li>
+        <li><a href="login.php">Log in</a></li>
         <li><a href="register.php">Sign up</a></li> 
         <li><a href="">contact</a></li> 
       </ul>
@@ -54,6 +54,9 @@
     </aside>
 
     <main class="mainContainer">
+
+      <p class="wordwrap">Welcome to our page! You can watch the workout animation for free. It's also possible to record daily exercises by logging in. Let's workout!</p>
+
       <h1>Work out</h1>
       <div class="viewContainer">
           <div class="circle none" id="count"></div>
@@ -67,11 +70,11 @@
         </div>
       </div>
       <div class="menuContainer">
-          <h3>【トレーニングメニュー】</h2>
+          <h3>【Workout Menu】</h2>
           <ul>
-            <li class="menu">プッシュアップ</li>
-            <li class="menu">バイシクル</li>
-            <li class="menu">スクワット</li>
+            <li class="menu">Pushup: Train your pectoralis major</li>
+            <li class="menu">Squat: Train your quads</li>
+            <li class="menu">Bicycle: Train your abs</li>
           </ul>
       </div>
     <main>

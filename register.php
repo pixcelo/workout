@@ -23,7 +23,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Noto+Sans+JP:400,700" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/register.css">
-  <title>workout</title>
+  <title>signup</title>
 </head>
 <body>
 
@@ -35,7 +35,7 @@
 
     <nav>
       <ul>
-        <li><a href="">Log in</a></li>
+        <li><a href="login.php">Log in</a></li>
         <li><a href="register.php">Sign up</a></li> 
         <li><a href="">contact</a></li> 
       </ul>
