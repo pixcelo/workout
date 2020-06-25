@@ -4,10 +4,8 @@
   include("includes/classes/User.php"); // Get User Info
   include("includes/handlers/ajax/workouts.php"); // Get User Info
 
-  include("test.php"); 
-
   if(isset($_SESSION['userLoggedIn'])) {
-      $userLoggedIn = new User($con, $_SESSION['userLoggedIn']);
+    $userLoggedIn = new User($con, $_SESSION['userLoggedIn']);
   }
 
 ?>
@@ -23,7 +21,7 @@
 </head>
 <body>
 
-  <!-- <header class="headerContainer show">
+  <header class="headerContainer show">
 
     <div>
         <img src="" class="" alt="">
@@ -31,13 +29,13 @@
 
     <nav>
       <ul>
-        <li><a href=""><?php echo $userLoggedIn->getUsername(); ?></a><</li>
+        <li><a href=""></a></li>
         <li><a href="">Log in</a></li>
         <li><a href="register.php">Sign up</a></li> 
         <li><a href="">contact</a></li> 
       </ul>
     </nav>
-  </header> -->
+  </header>
 
   <div class="container">
 
@@ -64,7 +62,7 @@
       </div>
       <div class="timeContainer">
         <div class="controls">
-              <button class="btn" id="start" type="submit">start</button>
+              <button class="btn" id="start">start</button>
           <div id="result"></div>
         </div>
       </div>
@@ -83,21 +81,19 @@
   <script src="assets/js/script.js"></script>
   <script>
     start.addEventListener('click', () => {
-      const postData = new FormData;
-    postData.set('workoutName', 'pushup');
-    postData.set('playCount', 1);
-  
-    const data = {
-      method: 'POST',
-      body: postData
-    };
-  
-    fetch('workout.php', data)
-      .then((res) => res.text())
-      .then(console.log);
-});
-
-  
+        const postData = new FormData;
+        postData.set('workoutName', 'pushup');
+        postData.set('playCount', 1);
+      
+        const data = {
+          method: 'POST',
+          body: postData
+        };
+      
+        fetch('workout.php', data)
+          .then((res) => res.text())
+          .then(console.log);
+    });
 
   </script>
 </body>

@@ -9,7 +9,7 @@ const pushup = document.querySelector('.pushup');
 let totalTime = 3;
 function countDown() {
     let timerLabel = `${totalTime}`;
-    console.log('totalTime : ' + totalTime--);
+    console.log('totalTime', totalTime--);
     let timerId = setTimeout(countDown, 1000);
 
     if(totalTime == -1){
@@ -32,7 +32,7 @@ function countDown() {
 let workoutTime = 30;
 function runTimer() {
     let countLabel = `${workoutTime}`;
-    console.log('workoutTime : ' + workoutTime--);
+    console.log('workoutTim', workoutTime--);
     let timeoutId = setTimeout(runTimer, 1000);
 
     if(workoutTime == -1){

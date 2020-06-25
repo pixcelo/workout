@@ -17,7 +17,6 @@ body {
 .headerContainer {
   height: 72px;
   width: 100%;
-  position: fixed;
   top: 0;
   background-color: #212121;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
@@ -46,7 +45,6 @@ body {
 .container {
   display: block;
   width: 100%;
-  margin-top: 72px;
 }
 
 /* register form */
@@ -58,7 +56,6 @@ body {
 
 .inputContainer {
   width: 400px;
-  padding: 45px;
   margin: 0 auto;
 }
 
@@ -91,4 +88,11 @@ body {
   margin: 20px auto;
   height: 41px;
   width: 40%;
+}
+
+.inputContainer a {
+  display: block;
+  margin: 0 auto;
+  text-decoration: none;
+  width: 100px;
 }

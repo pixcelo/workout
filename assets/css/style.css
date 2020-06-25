@@ -14,15 +14,12 @@ body {
   letter-spacing: 1px;
 }
 
-
 .headerContainer {
-  height: 70px;
+  height: 72px;
   width: 100%;
-  position: fixed;
   top: 0;
   background-color: #212121;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  z-index: 1;
 }
 
 .headerContainer ul {
@@ -48,7 +45,6 @@ body {
 .container {
   display: block;
   width: 100%;
-  margin-top: 72px;
 }
 
 .sideContainer {

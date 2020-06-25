@@ -28,6 +28,11 @@
 <body>
 
   <header class="headerContainer">
+
+    <div>
+          <img src="" class="" alt="">
+    </div>
+
     <nav>
       <ul>
         <li><a href="">Log in</a></li>
@@ -89,6 +94,7 @@
             </p>
 
             <button type="submit" name="registerButton">Sing up</button>
+            <a href="index.php">Back to Home</a>
           </form>
       </div>
 
