@@ -35,9 +35,9 @@
         $query = mysqli_query($this->con, "SELECT password FROM users WHERE username='$un'");
         $pass = mysqli_fetch_row($query);
    
-        if(password_verify($pw, $pass[0])){
+        if (password_verify($pw, $pass[0])) {
             return true;
-        }else{
+        } else {
             array_push($this->errorArray, Constants::$loginFailed);
             return false;
         }

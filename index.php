@@ -2,10 +2,13 @@
   include("includes/config.php"); // DB Connect
   include("includes/classes/Account.php"); // DB Insert
   include("includes/classes/User.php"); // Get User Info
-  include("includes/handlers/ajax/workouts.php"); // Get User Info
 
-  if(isset($_SESSION['userLoggedIn'])) {
+  // ログイン処理を実行してindex.phpに訪問した場合のみ$_SESSION['userLoggedIn']が渡ってくる
+  if (isset($_SESSION['userLoggedIn'])) {
     $userLoggedIn = new User($con, $_SESSION['userLoggedIn']);
+    $username = $userLoggedIn->getUsername();
+  } else {
+    header('Location: register.php');
   }
 
 ?>
@@ -30,9 +33,11 @@
     <nav>
       <ul>
         <li><a href=""></a></li>
+        <li><a href=""><?php echo $username; ?> </a></li>
         <li><a href="login.php">Log in</a></li>
         <li><a href="register.php">Sign up</a></li> 
-        <li><a href="">contact</a></li> 
+        <li><a href="">Contact</a></li> 
+        <li><a href="" class="logout">Log out</a></li> 
       </ul>
     </nav>
   </header>

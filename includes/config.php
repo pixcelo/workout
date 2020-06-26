@@ -1,6 +1,6 @@
 <?php
   // php.iniエラー表示の切り替え
-  // ini_set('display_errors', 1);
+  ini_set('display_errors', 1);
 
   // 出力のバッファリングを有効にする（計算した結果をすぐに表示せずに貯めておく）
   ob_start();

@@ -70,3 +70,14 @@ start.addEventListener('click', () => {
     setButtonStateRunning();
     countDown();
 });
+
+// ログアウト処理
+function logout() {
+    $.post("includes/handlers/ajax/logout.php", function() {
+        location.reload();
+    });
+}
+
+document.querySelector('.logout').addEventListener('click', () => {
+    logout();
+});

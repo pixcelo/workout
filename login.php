@@ -5,7 +5,7 @@
 
   $account = new Account($con);
 
-  include("includes/handlers/login-handler.php"); // Sanitize
+  include("includes/handlers/login-handler.php"); // Login & Ridirect with SESSION
 
   // inputのvalueにPOSTで渡った値を表示
   function getInputValue($name) {
@@ -13,6 +13,7 @@
       echo $_POST[$name];
     }
   }
+
 ?>
 
 
