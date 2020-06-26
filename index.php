@@ -3,12 +3,10 @@
   include("includes/classes/Account.php"); // DB Insert
   include("includes/classes/User.php"); // Get User Info
 
-  // ログイン処理を実行してindex.phpに訪問した場合のみ$_SESSION['userLoggedIn']が渡ってくる
   if (isset($_SESSION['userLoggedIn'])) {
     $userLoggedIn = new User($con, $_SESSION['userLoggedIn']);
     $username = $userLoggedIn->getUsername();
-  } else {
-    header('Location: register.php');
+    $userId = $userLoggedIn->getUserId();
   }
 
 ?>
@@ -33,7 +31,7 @@
     <nav>
       <ul>
         <li><a href=""></a></li>
-        <li><a href=""><?php echo $username; ?> </a></li>
+        <li><<a href=""><?php echo !empty($username) ? $username : ''; ?></a></li>
         <li><a href="login.php">Log in</a></li>
         <li><a href="register.php">Sign up</a></li> 
         <li><a href="">Contact</a></li> 
@@ -93,6 +91,7 @@
         const postData = new FormData;
         postData.set('workoutName', 'pushup');
         postData.set('playCount', 1);
+        postData.set('id', <?php $userId ?>);
       
         const data = {
           method: 'POST',

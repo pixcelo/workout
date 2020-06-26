@@ -72,12 +72,8 @@ start.addEventListener('click', () => {
 });
 
 // ログアウト処理
-function logout() {
-    $.post("includes/handlers/ajax/logout.php", function() {
-        location.reload();
-    });
-}
-
 document.querySelector('.logout').addEventListener('click', () => {
-    logout();
+    fetch('includes/handlers/ajax/logout.php', function() {
+        location.reload(); // reload logout.php (SESSION_destroy)
+    });
 });

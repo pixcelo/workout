@@ -1,4 +1,5 @@
 <?php
+  // if(!empty($_POST))
   if(isset($_POST['loginButton'])) {
       $username = $_POST['loginUsername'];
       $password = $_POST['loginPassword'];

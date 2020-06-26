@@ -4,6 +4,7 @@ include('includes/config.php');
 // startボタンクリックでworkoutの情報を取得
 $workoutName =  $_POST['workoutName'];
 $playCount = $_POST['playCount'];
+$userId = $_POST['id'];
 $playDate = date("Y-m-d");
 
 // DBのworkout履歴チェック
@@ -16,7 +17,7 @@ if(mysqli_num_rows($checkQuery) == 1) {
   // echo "データあり";
     $query = "UPDATE workouts SET playCount = playCount + 1";
 }else {
-    $query = "INSERT INTO workouts VALUES (NULL, '$workoutName', '$playDate', '$playCount')";
+    $query = "INSERT INTO workouts VALUES (NULL, '$workoutName', '$userId', '$playDate', '$playCount')";
 }
 
 mysqli_query($con, $query);
