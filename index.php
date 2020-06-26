@@ -6,7 +6,6 @@
   if (isset($_SESSION['userLoggedIn'])) {
     $userLoggedIn = new User($con, $_SESSION['userLoggedIn']);
     $username = $userLoggedIn->getUsername();
-    $userId = $userLoggedIn->getUserId();
   }
 
 ?>
@@ -86,23 +85,29 @@
   </div>
 
   <script src="assets/js/script.js"></script>
-  <script>
-    start.addEventListener('click', () => {
-        const postData = new FormData;
-        postData.set('workoutName', 'pushup');
-        postData.set('playCount', 1);
-        postData.set('id', <?php $userId ?>);
-      
-        const data = {
-          method: 'POST',
-          body: postData
-        };
-      
-        fetch('workout.php', data)
-          .then((res) => res.text())
-          .then(console.log);
-    });
+  <?php
+    if (isset($_SESSION['userLoggedIn'])) {
 
-  </script>
+        // if user log in, record workout to Database
+        echo "<script>
+                  start.addEventListener('click', () => {
+                      const postData = new FormData;
+                      postData.set('workoutName', 'pushup');
+                      postData.set('user', '$username');
+                      postData.set('playCount', 1);
+                    
+                      const data = {
+                        method: 'POST',
+                        body: postData
+                      };
+                    
+                      fetch('workout.php', data)
+                        .then((res) => res.text())
+                        .then(console.log);
+                  });
+              </script>";
+    }
+
+  ?>
 </body>
 </html>

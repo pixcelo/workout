@@ -1,5 +1,5 @@
 <?php
-  // php.iniエラー表示の切り替え
+  // php.ini エラー表示の切り替え
   ini_set('display_errors', 1);
 
   // 出力のバッファリングを有効にする（計算した結果をすぐに表示せずに貯めておく）
@@ -8,7 +8,7 @@
 
   $timezone = date_default_timezone_set('Asia/Tokyo');
 
-  // 引数は（ホスト名, ユーザー名, パスワード, データベース名）
+  // 引数（hostName, userName, password, databaseName）
   $con = mysqli_connect('localhost', 'root', 'root', 'workout');
 
   if(mysqli_connect_error()) {
