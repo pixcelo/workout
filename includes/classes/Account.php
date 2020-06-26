@@ -32,20 +32,20 @@
 
     // ログイン処理：ユーザーネームとパスワード判定
     public function login($un, $pw) {
-        $pw = md5($pw);
-        $query = mysqli_query($this->con, "SELECT * FROM users WHERE username='$un' AND password='$pw'");
-
-        if (mysqli_num_rows($query) == 1) {
-          return true;
-        } else {
-          array_push($this->errorArray, Constants::$loginFailed);
-          return false;
+        $query = mysqli_query($this->con, "SELECT password FROM users WHERE username='$un'");
+        $pass = mysqli_fetch_row($query);
+   
+        if(password_verify($pw, $pass[0])){
+            return true;
+        }else{
+            array_push($this->errorArray, Constants::$loginFailed);
+            return false;
         }
     }
 
     // アカウント登録：DB挿入
     private function insertUserDetails($un, $fn, $ln, $em, $pw) {
-        $encryptedPw = md5($pw);
+        $encryptedPw = password_hash($pw, PASSWORD_DEFAULT);
         $date = date("Y-m-d");
         $result = mysqli_query($this->con, "INSERT INTO users VALUES (NULL, '$un', '$fn', '$ln', '$em', '$encryptedPw', '$date')");
 
@@ -55,7 +55,7 @@
     
     // 入力項目のバリデーション
     private function validateUserName($un) {
-        if(strlen($un) > 25 || strlen($un) < 5) {
+        if(strlen($un) > 25 || strlen($un) < 3) {
             array_push($this->errorArray, Constants::$userNameCharacters);
             return;
         }
