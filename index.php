@@ -72,8 +72,9 @@
       <div class="menuContainer">
           <h3>【Workout Menu】</h2>
           <ul>
-            <li class="menu">Pushup: Train your pectoralis major</li>
+            <li class="menu">Push-ups: Train your pectoralis major</li>
             <li class="menu">Squat: Train your quads</li>
+            <li class="menu">Sit-ups: Train your abs</li>
             <li class="menu">Bicycle: Train your abs</li>
           </ul>
       </div>

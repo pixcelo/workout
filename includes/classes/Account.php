@@ -31,17 +31,17 @@
     }
 
     // ログイン処理：ユーザーネームとパスワード判定
-    // public function login($un, $pw) {
-    //     $pw = md5($pw);
-    //     $query = mysqli_query($this->con, "SELECT * FROM users WHERE username='$un' AND password='$pw'");
+    public function login($un, $pw) {
+        $pw = md5($pw);
+        $query = mysqli_query($this->con, "SELECT * FROM users WHERE username='$un' AND password='$pw'");
 
-    //     if (mysqli_num_rows($query) == 1) {
-    //       return true;
-    //     } else {
-    //       array_push($this->errorArray, Constants::$loginFailed);
-    //       return false;
-    //     }
-    // }
+        if (mysqli_num_rows($query) == 1) {
+          return true;
+        } else {
+          array_push($this->errorArray, Constants::$loginFailed);
+          return false;
+        }
+    }
 
     // アカウント登録：DB挿入
     private function insertUserDetails($un, $fn, $ln, $em, $pw) {

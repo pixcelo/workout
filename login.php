@@ -31,7 +31,7 @@
 
     <div>
           <img src="" class="" alt="">
-    </div>
+    </div> 
 
     <nav>
       <ul>
@@ -51,13 +51,13 @@
             <h2>Log in</h2>
             <p>
               <?php echo $account->getError(Constants::$loginFailed); ?>
-              <label for="username">user name</label>
-              <input id="username" name="username" type="text" placeholder="e.g. Johnny" value="<?php getInputValue('username') ?>" required>
+              <label for="loginUsername">user name</label>
+              <input id="loginUsername" name="loginUsername" type="text" placeholder="e.g. Johnny" value="<?php getInputValue('loginUsername') ?>" required>
             </p>
 
             <p>
-              <label for="password">password</label>
-              <input id="password" name="password" type="password" placeholder="your password" required autocomplete="off">
+              <label for="loginPassword">password</label>
+              <input id="loginPassword" name="loginPassword" type="password" placeholder="your password" required autocomplete="off">
             </p>
 
             <button type="submit" name="loginButton">Log in</button>
