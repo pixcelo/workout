@@ -63,6 +63,8 @@
 
             <button type="submit" name="loginButton">Log in</button>
             <a href="index.php">Back to Home</a>
+            <br>
+            <p style="text-align: center">テストユーザーでログインできます<br>username:  test / password:  11111</p>
           </form>
       </div>
 

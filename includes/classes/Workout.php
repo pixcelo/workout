@@ -33,9 +33,8 @@
         $query = mysqli_query($this->con, "SELECT * FROM workouts WHERE workoutName='$this->workoutName'");
         $this->workoutData = mysqli_fetch_array($query);
 
-        return $this->workoutData['workoutName'] . ' : ' .  $this->workoutData['playCount'] . 'times';
+        return '<li class="number">' . $this->workoutData['workoutName'] . ' : ' .  $this->workoutData['playCount'] . 'times</li>';
     }
     
   }
-
 

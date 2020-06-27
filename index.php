@@ -4,14 +4,22 @@
   include("includes/classes/User.php"); // Get User Info
   include("includes/classes/Workout.php"); // Record Workout Info
 
+  // display of Number of workouts
+  $flag = 0;
+
   if (isset($_SESSION['userLoggedIn'])) {
     $userLoggedIn = new User($con, $_SESSION['userLoggedIn']);
     $username = $userLoggedIn->getUsername();
+
+      // ワークアウトがある場合のみワークアウト履歴を表示
+      $query = mysqli_query($con, "SELECT * FROM workouts WHERE user='$username'");
+      $result = mysqli_num_rows($query);
+      
+      if ($result > 1) {
+        $flag = 1;
+        $workout = new Workout($con, $username);
+      }
   }
-
-  $workout = new Workout($con, $username);
-
-  // var_dump($workout);
 
 ?>
 
@@ -50,8 +58,14 @@
         <h3>Number of workouts</h3>
         <ul>
           <!-- <li class="number">Total:<span class="times">0</span> times</li> -->
-          <li class="number"><span><?php echo $workout->getPlayCount('pushup'); ?></span></li>
-          <li class="number"><span><?php echo $workout->getPlayCount('squat'); ?></span></li>
+          <?php 
+            if($flag == 1) {
+                echo  $workout->getPlayCount("pushup");
+                echo $workout->getPlayCount("squat");
+            } else {
+                echo '<p>No play records.</p>';
+            }
+          ?>
         </ul>
       </div>
       <div>
