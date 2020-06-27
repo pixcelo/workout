@@ -1,5 +1,5 @@
 <?php
-include('includes/config.php');
+include('../../config.php');
 
 // startボタンクリックでworkoutの情報を取得
 $workoutName =  $_POST['workoutName'];

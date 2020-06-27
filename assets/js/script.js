@@ -12,21 +12,20 @@ function checkType() {
     // HTMLFormControlsCollection(4) [input, input, input, input, type: RadioNodeList(4)]
     for (let i = 0; i < document.typeForm.elements.length - 1; i++) {
       if (document.typeForm.elements[i].checked) {
-        // alert(document.typeForm.elements[i].value + "が選択されました。");
-        console.log(document.typeForm.elements[i].value);
+        // console.log(document.typeForm.elements[i].value);
         checkedType = document.typeForm.elements[i].value;
       }
     }
 };
 
 
-
-
 // カウントダウンタイマー（3秒）
 let totalTime = 3;
+
 function countDown() {
     let timerLabel = `${totalTime}`;
-    console.log('totalTime', totalTime--);
+    // console.log('totalTime', totalTime--);
+    totalTime--;
     let timerId = setTimeout(countDown, 1000);
 
     if(totalTime == -1){
@@ -36,7 +35,7 @@ function countDown() {
     if(totalTime == -2) {
       count.classList.add('none');
       clearTimeout(timerId);
-      totalTime = 3;
+      totalTime = 3; // 初期化
       runTimer();
       return;
     }
@@ -49,7 +48,8 @@ function countDown() {
 let workoutTime = 30;
 function runTimer() { 
     let countLabel = `${workoutTime}`;
-    console.log('workoutTim', workoutTime--);
+    // console.log('workoutTim', workoutTime--);
+    workoutTime--;
     let timeoutId = setTimeout(runTimer, 1000);
 
     if(workoutTime == -1){
@@ -66,8 +66,8 @@ function runTimer() {
             squat.classList.add('none');
         }
 
-        workoutTime = 30;
-        setButtonStateInitial();
+        workoutTime = 30; // 初期化
+        start.classList.remove('inactive');
         return;
     }
 
@@ -83,22 +83,11 @@ function runTimer() {
 
 }
 
-
-// 状態を関数で整理
-function setButtonStateInitial() {
-    start.classList.remove('inactive');
-}
-
-function setButtonStateRunning() {
-    start.classList.add('inactive');
-}
-
-// チェックボックス を選択した状態でクリックを条件に追加する予定
 start.addEventListener('click', () => {
     if(start.classList.contains('inactive')) {
       return;
     }
-    setButtonStateRunning();
+    start.classList.add('inactive');
     countDown();
     checkType();
 });

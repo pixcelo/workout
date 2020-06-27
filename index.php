@@ -2,11 +2,14 @@
   include("includes/config.php"); // DB Connect
   include("includes/classes/Account.php"); // DB Insert
   include("includes/classes/User.php"); // Get User Info
+  // include("includes/classes/Workout.php"); // Record Workout Info
 
   if (isset($_SESSION['userLoggedIn'])) {
     $userLoggedIn = new User($con, $_SESSION['userLoggedIn']);
     $username = $userLoggedIn->getUsername();
   }
+
+  // $workout = new Workout($con, $$username, $workoutName);
 
 ?>
 
@@ -75,10 +78,10 @@
           <h3>【Workout Menu】</h2>
           <ul>
             <form name="typeForm">
-              <li class="menu"><input type="checkbox" name="type" value="pushup" checked="checked">pushup<span>: Train your pectoralis major</span></li>
-              <li class="menu"><input type="checkbox" name="type" value="squat">squat<span>: Train your quads</span></li>
-              <li class="menu"><input type="checkbox" name="type" value="situp">situp<span>: Train your abs</span></li>
-              <li class="menu"><input type="checkbox" name="type" value="bicycle">bicycle<span>: Train your abs</span></li>
+              <li class="menu"><input type="radio" name="type" value="pushup" checked="checked">pushup<span>: Train your pectoralis major</span></li>
+              <li class="menu"><input type="radio" name="type" value="squat">squat<span>: Train your quads</span></li>
+              <li class="menu"><input type="radio" name="type" value="situp">situp<span>: Train your abs</span></li>
+              <li class="menu"><input type="radio" name="type" value="bicycle">bicycle<span>: Train your abs</span></li>
             </form>
           </ul>
       </div>
@@ -94,7 +97,7 @@
         echo "<script>
                   start.addEventListener('click', () => {
                       const postData = new FormData;
-                      postData.set('workoutName', 'pushup');
+                      postData.set('workoutName', checkedType);
                       postData.set('user', '$username');
                       postData.set('playCount', 1);
                     
@@ -103,7 +106,7 @@
                         body: postData
                       };
                     
-                      fetch('workout.php', data)
+                      fetch('includes/handlers/ajax/workout.php', data)
                         .then((res) => res.text())
                         .then(console.log)
 
