@@ -27,10 +27,10 @@
       return $this->workoutName;
     }
 
-    public function getPlayCount($workoutName) {
+    public function getPlayCount($user, $workoutName) {
         $this->workoutName = $workoutName;
 
-        $query = mysqli_query($this->con, "SELECT * FROM workouts WHERE workoutName='$this->workoutName'");
+        $query = mysqli_query($this->con, "SELECT * FROM workouts WHERE user='$this->user' AND workoutName='$this->workoutName'");
         $this->workoutData = mysqli_fetch_array($query);
 
         return '<li class="number">' . $this->workoutData['workoutName'] . ' : ' .  $this->workoutData['playCount'] . 'times</li>';
