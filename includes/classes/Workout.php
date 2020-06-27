@@ -7,6 +7,7 @@
     private $user;
     private $playDate;
     private $playCount;
+    private $name;
 
     public function __construct($con, $user) {
       $this->con = $con;
@@ -15,7 +16,8 @@
       $query = mysqli_query($this->con, "SELECT * FROM workouts WHERE user='$this->user'");
       $this->workoutData = mysqli_fetch_array($query);
 
-      $this->workoutName = $this->workoutData['workoutName']; 
+      $this->id = $this->workoutData['id']; 
+      // $this->workoutName = $this->workoutData['workoutName']; 
       $this->user = $this->workoutData['user']; 
       $this->playDate = $this->workoutData['playDate']; 
       $this->playCount = $this->workoutData['playCount']; 
@@ -26,9 +28,12 @@
     }
 
     public function getPlayCount($workoutName) {
-        $query = mysqli_query($this->con, "SELECT playCount FROM workouts WHERE workoutName='$this->workoutName'");
+        $this->workoutName = $workoutName;
+
+        $query = mysqli_query($this->con, "SELECT * FROM workouts WHERE workoutName='$this->workoutName'");
         $this->workoutData = mysqli_fetch_array($query);
-        return $this->workoutData['playCount'];
+
+        return $this->workoutData['workoutName'] . ' : ' .  $this->workoutData['playCount'] . 'times';
     }
     
   }

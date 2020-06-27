@@ -50,8 +50,8 @@
         <h3>Number of workouts</h3>
         <ul>
           <!-- <li class="number">Total:<span class="times">0</span> times</li> -->
-          <li class="number">Pushup:<span><?php echo $workout->getPlayCount('pushup'); ?></span> times</li>
-          <li class="number">Squat:<span><?php echo $workout->getPlayCount('squat'); ?></span> times</li>
+          <li class="number"><span><?php echo $workout->getPlayCount('pushup'); ?></span></li>
+          <li class="number"><span><?php echo $workout->getPlayCount('squat'); ?></span></li>
         </ul>
       </div>
       <div>
