@@ -2,14 +2,16 @@
   include("includes/config.php"); // DB Connect
   include("includes/classes/Account.php"); // DB Insert
   include("includes/classes/User.php"); // Get User Info
-  // include("includes/classes/Workout.php"); // Record Workout Info
+  include("includes/classes/Workout.php"); // Record Workout Info
 
   if (isset($_SESSION['userLoggedIn'])) {
     $userLoggedIn = new User($con, $_SESSION['userLoggedIn']);
     $username = $userLoggedIn->getUsername();
   }
 
-  // $workout = new Workout($con, $$username, $workoutName);
+  $workout = new Workout($con, $username);
+
+  // var_dump($workout);
 
 ?>
 
@@ -47,9 +49,9 @@
       <div>
         <h3>Number of workouts</h3>
         <ul>
-          <li class="number">Total:<span class="times">0</span> times</li>
-          <li class="number">This month:<span>0</span> times</li>
-          <li class="number">This week:<span>0</span> times</li>
+          <!-- <li class="number">Total:<span class="times">0</span> times</li> -->
+          <li class="number">Pushup:<span><?php echo $workout->getPlayCount('pushup'); ?></span> times</li>
+          <li class="number">Squat:<span><?php echo $workout->getPlayCount('squat'); ?></span> times</li>
         </ul>
       </div>
       <div>
