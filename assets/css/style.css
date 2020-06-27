@@ -71,7 +71,7 @@ body {
 
 .viewContainer {
   background-color: #fdf9f9;;
-  height: 300px;
+  height: 500px;
   width: 500px;
 }
 
@@ -193,6 +193,22 @@ body {
 }
 
 @keyframes play {
+  to {
+    background-position: -840px 0;
+  }
+}
+
+.squat {
+  background: url(../images/person/squat.svg) no-repeat;
+  width: 250px;
+  height: 400px;
+  animation: squat 1s steps(2) infinite;
+  position: absolute;
+  top: 22%;
+  left: 31%;
+}
+
+@keyframes squat {
   to {
     background-position: -840px 0;
   }

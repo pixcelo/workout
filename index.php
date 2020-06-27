@@ -63,6 +63,7 @@
           <div class="circle none" id="count"></div>
           <div class="timezone none" id="timer">30</div>
           <div class="pushup none"></div>
+          <div class="squat none"></div>
       </div>
       <div class="timeContainer">
         <div class="controls">
@@ -73,10 +74,12 @@
       <div class="menuContainer">
           <h3>【Workout Menu】</h2>
           <ul>
-            <li class="menu">Push-ups: Train your pectoralis major</li>
-            <li class="menu">Squat: Train your quads</li>
-            <li class="menu">Sit-ups: Train your abs</li>
-            <li class="menu">Bicycle: Train your abs</li>
+            <form name="typeForm">
+              <li class="menu"><input type="checkbox" name="type" value="pushup" checked="checked">pushup<span>: Train your pectoralis major</span></li>
+              <li class="menu"><input type="checkbox" name="type" value="squat">squat<span>: Train your quads</span></li>
+              <li class="menu"><input type="checkbox" name="type" value="situp">situp<span>: Train your abs</span></li>
+              <li class="menu"><input type="checkbox" name="type" value="bicycle">bicycle<span>: Train your abs</span></li>
+            </form>
           </ul>
       </div>
     <main>
@@ -102,7 +105,8 @@
                     
                       fetch('workout.php', data)
                         .then((res) => res.text())
-                        .then(console.log);
+                        .then(console.log)
+
                   });
               </script>";
     }
