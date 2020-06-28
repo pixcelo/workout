@@ -80,6 +80,9 @@
       <h1>Work out</h1>
       <div class="viewContainer">
           <div class="circle none" id="count"></div>
+            <audio id="countTimerSound" preload="auto">
+              <source src="assets/sounds/Zihou01-1.mp3" type="audio/mp3">
+            </audio>
           <div class="timezone none" id="timer">30</div>
           <div class="pushup none"></div>
           <div class="squat none"></div>
@@ -91,7 +94,7 @@
         </div>
       </div>
       <div class="menuContainer">
-          <h3>【Workout Menu】</h2>
+          <h2>【Workout Menu】</h2>
           <ul>
             <form name="typeForm">
               <li class="menu"><input type="radio" name="type" value="pushup" checked="checked">pushup<span>: Train your pectoralis major</span></li>
@@ -103,6 +106,11 @@
       </div>
     <main>
 
+  </div>
+
+  <div class="credit">
+    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="クリエイティブ・コモンズ・ライセンス" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a>
+    <small>Sound material : OtoLogic (https://otologic.jp)</small>
   </div>
 
   <script src="assets/js/script.js"></script>

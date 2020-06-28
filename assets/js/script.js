@@ -24,6 +24,7 @@ let totalTime = 3;
 
 function countDown() {
     let timerLabel = `${totalTime}`;
+    soundTimer();
     // console.log('totalTime', totalTime--);
     totalTime--;
     let timerId = setTimeout(countDown, 1000);
@@ -81,6 +82,11 @@ function runTimer() {
 
     timer.innerHTML = countLabel;
 
+}
+
+// Sound Timer
+function soundTimer() {
+	document.getElementById('countTimerSound').play() ;
 }
 
 start.addEventListener('click', () => {
