@@ -6,6 +6,7 @@ const count = document.getElementById('count');
 const pushup = document.querySelector('.pushup');
 const squat = document.querySelector('.squat');
 let checkedType;
+let audioElement;
 
 function checkType() {
     // elements にはボタンの要素も含まれてしまうため -1 (下記参照)
@@ -49,6 +50,7 @@ function countDown() {
 let workoutTime = 30;
 function runTimer() { 
     let countLabel = `${workoutTime}`;
+    soundWorkoutSound();
     // console.log('workoutTim', workoutTime--);
     workoutTime--;
     let timeoutId = setTimeout(runTimer, 1000);
@@ -84,9 +86,13 @@ function runTimer() {
 
 }
 
-// Sound Timer
+// Sound
 function soundTimer() {
-	document.getElementById('countTimerSound').play() ;
+	document.getElementById('countTimerSound').play();
+}
+
+function soundWorkoutSound() {
+    document.getElementById('workoutSound').play();
 }
 
 start.addEventListener('click', () => {

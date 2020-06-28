@@ -214,6 +214,27 @@ body {
   }
 }
 
+/* Mute button */
+audio {
+  position: absolute;
+  top: 430px;
+  right: 100px;
+}
+
+
+.controlButton {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  right: 5px;
+  top: 470px;
+}
+
+.controlButton img {
+  width: 20px;
+  height: 20px;
+}
+
 /* footer */
 .credit {
   text-align: center;

@@ -80,12 +80,12 @@
       <h1>Work out</h1>
       <div class="viewContainer">
           <div class="circle none" id="count"></div>
-            <audio id="countTimerSound" preload="auto">
-              <source src="assets/sounds/Zihou01-1.mp3" type="audio/mp3">
-            </audio>
+            
           <div class="timezone none" id="timer">30</div>
           <div class="pushup none"></div>
           <div class="squat none"></div>
+          <audio controls  controlslist="nodownload" id="countTimerSound" src="assets/sounds/Countdown01-2.mp3"></audio>
+          <audio controls  controlslist="nodownload" id="workoutSound" src="assets/sounds/Loop03.mp3"></audio>
       </div>
       <div class="timeContainer">
         <div class="controls">
