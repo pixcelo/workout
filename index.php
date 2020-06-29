@@ -60,7 +60,8 @@
           <!-- <li class="number">Total:<span class="times">0</span> times</li> -->
           <?php 
             if($flag == 1) {
-                echo  $workout->getPlayCount($username, 'pushup');
+                echo $workout->getTotalCount($username);
+                echo $workout->getPlayCount($username, 'pushup');
                 echo $workout->getPlayCount($username, 'squat');
             } else {
                 echo '<p>No play records.</p>';

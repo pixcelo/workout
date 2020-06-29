@@ -35,6 +35,14 @@
 
         return '<li class="number">' . $this->workoutData['workoutName'] . ' : ' .  $this->workoutData['playCount'] . 'times</li>';
     }
+
+    public function getTotalCount($user) {
+
+      $query = mysqli_query($this->con, "SELECT SUM(playCount) as total FROM workouts WHERE user='$this->user'");
+      $this->workoutData = mysqli_fetch_array($query);
+
+      return '<li class="number">Total : ' .  $this->workoutData['total'] . 'times</li>';
+  }
     
   }
 
