@@ -57,7 +57,7 @@
     // 入力項目のバリデーション
     private function validateUserName($un) {
         if(strlen($un) > 25 || strlen($un) < 3) {
-            array_push($this->errorArray, Constants::$userNameCharacters);
+            array_push($this->errorArray, Constants::$usernameCharacters);
             return;
         }
 
