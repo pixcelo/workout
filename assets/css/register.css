@@ -96,3 +96,9 @@ body {
   text-decoration: none;
   width: 100px;
 }
+
+.inputContainer .errorMessage {
+  color: #ff3c00;
+  font-size: 12px;
+  display: block;
+}

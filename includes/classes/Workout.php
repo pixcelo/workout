@@ -37,7 +37,6 @@
     }
 
     public function getTotalCount($user) {
-
       $query = mysqli_query($this->con, "SELECT SUM(playCount) as total FROM workouts WHERE user='$this->user'");
       $this->workoutData = mysqli_fetch_array($query);
 
