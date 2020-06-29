@@ -9,14 +9,9 @@ let checkedType;
 let audioElement;
 
 function checkType() {
-    // elements にはボタンの要素も含まれてしまうため -1 (下記参照)
-    // HTMLFormControlsCollection(4) [input, input, input, input, type: RadioNodeList(4)]
-    for (let i = 0; i < document.typeForm.elements.length - 1; i++) {
-      if (document.typeForm.elements[i].checked) {
-        // console.log(document.typeForm.elements[i].value);
-        checkedType = document.typeForm.elements[i].value;
+      if (document.typeForm.type.checked) {
+        checkedType = document.typeForm.type.value;
       }
-    }
 };
 
 
