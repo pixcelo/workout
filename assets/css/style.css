@@ -148,7 +148,7 @@ body {
 }
 
 .timeContainer {
-  margin: 20px auto;
+  margin: 70px auto 0 auto;
   width: 270px;
   background: #fff;
   padding: 15px;
@@ -217,7 +217,7 @@ body {
 /* Mute button */
 audio {
   position: absolute;
-  top: 430px;
+  top: 510px;
   right: 100px;
 }
 

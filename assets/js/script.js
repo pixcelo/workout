@@ -13,8 +13,7 @@ let totalTime = 3;
 
 function countDown() {
     let timerLabel = `${totalTime}`;
-    soundTimer();
-    // console.log('totalTime', totalTime--);
+    document.getElementById('countTimerSound').play();
     totalTime--;
     let timerId = setTimeout(countDown, 1000);
 
@@ -38,8 +37,7 @@ function countDown() {
 let workoutTime = 30;
 function runTimer() { 
     let countLabel = `${workoutTime}`;
-    soundWorkoutSound();
-    // console.log('workoutTim', workoutTime--);
+    document.getElementById('workoutSound').play();
     workoutTime--;
     let timeoutId = setTimeout(runTimer, 1000);
 
@@ -72,15 +70,6 @@ function runTimer() {
 
     timer.innerHTML = countLabel;
 
-}
-
-// Sound
-function soundTimer() {
-	document.getElementById('countTimerSound').play();
-}
-
-function soundWorkoutSound() {
-    document.getElementById('workoutSound').play();
 }
 
 start.addEventListener('click', () => {
