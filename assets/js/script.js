@@ -8,13 +8,6 @@ const squat = document.querySelector('.squat');
 let checkedType;
 let audioElement;
 
-function checkType() {
-      if (document.typeForm.type.checked) {
-        checkedType = document.typeForm.type.value;
-      }
-};
-
-
 // カウントダウンタイマー（3秒）
 let totalTime = 3;
 
@@ -96,7 +89,7 @@ start.addEventListener('click', () => {
     }
     start.classList.add('inactive');
     countDown();
-    checkType();
+    checkedType = document.typeForm.type.value;
 });
 
 // ログアウト処理
