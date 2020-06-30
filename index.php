@@ -43,7 +43,7 @@
     <nav>
       <ul>
         <li><a href=""></a></li>
-        <li><a href=""><?php echo !empty($username) ? $username : '<a href="login.php">Log in</a>'; ?></a></li>
+        <li><a href=""><?php echo !empty($username) ? '<a href="profile.php">' . $username . '</a>' : '<a href="login.php">Log in</a>'; ?></a></li>
         <li><a href="register.php">Sign up</a></li> 
         <li><a href="">Contact</a></li> 
         <li><a href="" class="logout">Log out</a></li> 
