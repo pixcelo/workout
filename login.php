@@ -30,9 +30,9 @@
 
   <header class="headerContainer">
 
-    <div>
-          <img src="" class="" alt="">
-    </div> 
+  <div>
+        <a href="index.php"><img src="assets/images/icons/logo_transparent.png" class="logo" alt="logo"></a>
+    </div>
 
     <nav>
       <ul>

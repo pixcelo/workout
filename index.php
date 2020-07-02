@@ -37,7 +37,7 @@
   <header class="headerContainer show">
 
     <div>
-        <img src="" class="" alt="">
+        <a href="index.php"><img src="assets/images/icons/logo_transparent.png" class="logo" alt="logo"></a>
     </div>
 
     <nav>
