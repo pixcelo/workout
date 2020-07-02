@@ -91,6 +91,7 @@
       <div class="timeContainer">
         <div class="controls">
               <button class="btn" id="start">start</button>
+              <button class="btn" id="testbtn">test</button>
           <div id="result"></div>
         </div>
       </div>

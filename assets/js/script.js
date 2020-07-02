@@ -43,6 +43,7 @@ function runTimer() {
 
     if(workoutTime == -1){
         countLabel = 'FINISH';
+        showModalWindow();
     }
 
     if(workoutTime == -2) {
@@ -87,3 +88,32 @@ document.querySelector('.logout').addEventListener('click', () => {
         location.reload(); // reload logout.php (SESSION_destroy)
     });
 });
+
+// モーダルウィンドウ
+document.getElementById('testbtn').addEventListener('click', showModalWindow);
+
+function showModalWindow() {
+    const modalElement = document.createElement('div');
+    modalElement.classList.add('modal');
+    const innerElement = document.createElement('div');
+    innerElement.classList.add('inner');
+    innerElement.innerHTML = `
+    <p>モーダルの中身</p>
+    <div class="charactor"></div>
+    <a href="//twitter.com/share?text="Workout of the day!"&url=http://upstr.me/workout/&via=wemo_blog" title="Twitterでシェア" onclick="return sns_window(this, 400, 600);">
+  Twitter
+</a>
+    `;
+    modalElement.appendChild(innerElement);
+    document.body.appendChild(modalElement);
+
+    innserElement.addEventListener('click', () => {
+        closeModalWindow(modalElement);
+    });
+}
+
+// モーダルを閉じる
+function closeModalWindow(modalElement) {
+    document.body.removeChild(modalElement);
+}
+
