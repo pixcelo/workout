@@ -57,7 +57,6 @@
       <div>
         <h3>Number of workouts</h3>
         <ul>
-          <!-- <li class="number">Total:<span class="times">0</span> times</li> -->
           <?php 
             if($flag == 1) {
                 echo $workout->getTotalCount($username);
@@ -80,6 +79,7 @@
 
       <h1>Work out</h1>
       <div class="viewContainer">
+          <div class="none" id="overlay"></div>
           <div class="circle none" id="count"></div>
             
           <div class="timezone none" id="timer">30</div>
@@ -91,11 +91,14 @@
       <div class="timeContainer">
         <div class="controls">
               <button class="btn" id="start">start</button>
-              <button class="btn" id="testbtn">test</button>
-              <button id="modal-btn">ボタン</button>
+              <button class="btn" id="modal-btn">ボタン</button>
           <div id="result"></div>
         </div>
+
       </div>
+      
+
+
       <div class="menuContainer">
           <h2>【Workout Menu】</h2>
           <ul>
@@ -108,6 +111,8 @@
           </ul>
       </div>
     <main>
+
+    
 
   </div>
 

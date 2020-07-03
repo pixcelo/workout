@@ -90,9 +90,11 @@ document.querySelector('.logout').addEventListener('click', () => {
 });
 
 // モーダルウィンドウ
-document.getElementById('testbtn').addEventListener('click', showModalWindow);
+document.getElementById('modal-btn').addEventListener('click', showModalWindow);
+const overlayElement = document.getElementById('overlay');
 
 function showModalWindow() {
+    overlayElement.classList.remove('none');
     const modalElement = document.createElement('div');
     modalElement.classList.add('modal');
     const innerElement = document.createElement('div');
@@ -102,6 +104,9 @@ function showModalWindow() {
 
     innerElement.innerHTML = `
         <p>モーダルウィンドウ</p>
+        <div>tweet</div>
+        <div>close</div>
+
     `;
 
     modalElement.appendChild(innerElement);
@@ -115,5 +120,6 @@ function showModalWindow() {
 // モーダルを閉じる
 function closeModalWindow(modalElement) {
     document.body.removeChild(modalElement);
+    overlayElement.classList.add('none');
 }
 

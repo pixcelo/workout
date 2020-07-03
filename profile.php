@@ -50,3 +50,29 @@
       </ul>
     </nav>
   </header>
+
+  <div class="container">
+
+    <aside class="sideContainer">
+      <div>
+       
+      </div>
+    </aside>
+
+    <main class="profileContainer">
+
+      <div class="">image</div>
+      <h2>Profile</h2>
+      <p>name:</p>
+      <p>comment</p>
+        
+    <main>
+
+    
+
+  </div>
+
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

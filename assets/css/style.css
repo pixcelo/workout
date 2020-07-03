@@ -245,6 +245,7 @@ audio {
 /* modal window */
 .modal {
   position: fixed;
+  z-index: 99;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -258,6 +259,19 @@ audio {
   border-radius: 10px;
 }
 
+#overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9;
+  background-color: rgba(0, 0, 0, .65);
+}
+
+.none {
+  display: none;
+}
 
 /* footer */
 .credit {
