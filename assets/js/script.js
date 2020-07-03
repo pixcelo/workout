@@ -97,17 +97,17 @@ function showModalWindow() {
     modalElement.classList.add('modal');
     const innerElement = document.createElement('div');
     innerElement.classList.add('inner');
+
+    let shareURL = location.href;
+
     innerElement.innerHTML = `
-    <p>モーダルの中身</p>
-    <div class="charactor"></div>
-    <a href="//twitter.com/share?text="Workout of the day!"&url=http://upstr.me/workout/&via=wemo_blog" title="Twitterでシェア" onclick="return sns_window(this, 400, 600);">
-  Twitter
-</a>
+        <p>モーダルウィンドウ</p>
     `;
+
     modalElement.appendChild(innerElement);
     document.body.appendChild(modalElement);
 
-    innserElement.addEventListener('click', () => {
+    innerElement.addEventListener('click', () => {
         closeModalWindow(modalElement);
     });
 }

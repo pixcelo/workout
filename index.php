@@ -92,6 +92,7 @@
         <div class="controls">
               <button class="btn" id="start">start</button>
               <button class="btn" id="testbtn">test</button>
+              <button id="modal-btn">ボタン</button>
           <div id="result"></div>
         </div>
       </div>
