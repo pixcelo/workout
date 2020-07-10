@@ -34,24 +34,26 @@
 </head>
 <body>
 
-  <header class="headerContainer show">
-
-    <div>
-        <a href="index.php"><img src="assets/images/icons/logo_transparent.png" class="logo" alt="logo"></a>
+  <header class="header show">
+    <div class="headerContainer wrapper">
+      <div>
+          <a href="index.php"><img src="assets/images/icons/logo_transparent.png" class="logo" alt="logo"></a>
+      </div>
+  
+      <nav>
+        <ul>
+          <li><a href=""></a></li>
+          <li><a href=""><?php echo !empty($username) ? '<a href="profile.php">' . $username . '</a>' : '<a href="login.php">Log in</a>'; ?></a></li>
+          <li><a href="register.php">Sign up</a></li> 
+          <li><a href="">Contact</a></li> 
+          <li><a href="" class="logout">Log out</a></li> 
+        </ul>
+      </nav>
     </div>
 
-    <nav>
-      <ul>
-        <li><a href=""></a></li>
-        <li><a href=""><?php echo !empty($username) ? '<a href="profile.php">' . $username . '</a>' : '<a href="login.php">Log in</a>'; ?></a></li>
-        <li><a href="register.php">Sign up</a></li> 
-        <li><a href="">Contact</a></li> 
-        <li><a href="" class="logout">Log out</a></li> 
-      </ul>
-    </nav>
   </header>
 
-  <div class="container">
+  <div class="wrapper">
 
     <aside class="sideContainer">
       <div>
@@ -112,14 +114,13 @@
       </div>
     <main>
 
-    
+      <div class="credit">
+        <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="クリエイティブ・コモンズ・ライセンス" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a>
+        <small>Sound material : OtoLogic (https://otologic.jp)</small>
+      </div>
 
   </div>
 
-  <div class="credit">
-    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="クリエイティブ・コモンズ・ライセンス" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a>
-    <small>Sound material : OtoLogic (https://otologic.jp)</small>
-  </div>
 
   <script src="assets/js/script.js"></script>
   <?php

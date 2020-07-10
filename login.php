@@ -28,22 +28,26 @@
 </head>
 <body>
 
-  <header class="headerContainer">
-
-  <div>
-        <a href="index.php"><img src="assets/images/icons/logo_transparent.png" class="logo" alt="logo"></a>
+<header class="header show">
+    <div class="headerContainer wrapper">
+      <div>
+          <a href="index.php"><img src="assets/images/icons/logo_transparent.png" class="logo" alt="logo"></a>
+      </div>
+  
+      <nav>
+        <ul>
+          <li><a href=""></a></li>
+          <li><a href=""><?php echo !empty($username) ? '<a href="profile.php">' . $username . '</a>' : '<a href="login.php">Log in</a>'; ?></a></li>
+          <li><a href="register.php">Sign up</a></li> 
+          <li><a href="">Contact</a></li> 
+          <li><a href="" class="logout">Log out</a></li> 
+        </ul>
+      </nav>
     </div>
 
-    <nav>
-      <ul>
-        <li><a href="login.php">Log in</a></li>
-        <li><a href="register.php">Sign up</a></li> 
-        <li><a href="">contact</a></li> 
-      </ul>
-    </nav>
   </header>
 
-  <div class="container">
+  <div class="wrapper">
 
     <main class="loginContainer">
 
