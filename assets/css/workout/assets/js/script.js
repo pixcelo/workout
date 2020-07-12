@@ -43,7 +43,6 @@ function runTimer() {
 
     if(workoutTime == -1){
         countLabel = 'FINISH';
-        // showModalWindow();
     }
 
     if(workoutTime == -2) {
@@ -88,38 +87,3 @@ document.querySelector('.logout').addEventListener('click', () => {
         location.reload(); // reload logout.php (SESSION_destroy)
     });
 });
-
-// モーダルウィンドウ
-document.getElementById('modal-btn').addEventListener('click', showModalWindow);
-const overlayElement = document.getElementById('overlay');
-
-function showModalWindow() {
-    overlayElement.classList.remove('none');
-    const modalElement = document.createElement('div');
-    modalElement.classList.add('modal');
-    const innerElement = document.createElement('div');
-    innerElement.classList.add('inner');
-
-    let shareURL = location.href;
-
-    innerElement.innerHTML = `
-        <p>モーダルウィンドウ</p>
-        <div>tweet</div>
-        <div>close</div>
-
-    `;
-
-    modalElement.appendChild(innerElement);
-    document.body.appendChild(modalElement);
-
-    innerElement.addEventListener('click', () => {
-        closeModalWindow(modalElement);
-    });
-}
-
-// モーダルを閉じる
-function closeModalWindow(modalElement) {
-    document.body.removeChild(modalElement);
-    overlayElement.classList.add('none');
-}
-
