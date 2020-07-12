@@ -43,7 +43,7 @@ function runTimer() {
 
     if(workoutTime == -1){
         countLabel = 'FINISH';
-        // showModalWindow();
+        showModalWindow();
     }
 
     if(workoutTime == -2) {
