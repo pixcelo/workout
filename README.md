@@ -1,7 +1,7 @@
 workout
 
 ## デモサイト
-http://upstr.me/workout/
+https://www.work-apps.xyz/workout/
 - 実行環境：mixhost（レンタルサーバー）
 ## 概要
 ワークアウト（トレーニング用）アプリケーション
